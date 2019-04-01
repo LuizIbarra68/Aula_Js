@@ -17,13 +17,16 @@
         <button id="btnSalvarHtml">Salvar (html)</button>
         <button id="btnLimpar">Limpar</button>
         <button id="btnExcluir">Excluir Tela</button>
-        <button id="btnH1">Pegar H1</button>
+        <button id="btnEsconder">Esconder Tela</button>
+        <button id="btnEsconderMostrar">Esconder e Mostrar Tela</button>
+        
         
         <div id="tela"></div>
         <style>
             #tela{
                 width: 200px; height: 100px;
                 border: solid 1px black;
+                background-color: greenyellow;
             }
         </style>
         
@@ -43,8 +46,15 @@
             $("#btnExcluir").click( function (){
                 $("#tela").remove();
             });
-            $("#btnH1").click( function (){
-                $("#tela").pegar();
+            $("#btnEsconder").click( function (){
+                $("#tela").hide(5000, function (){
+                   alert("A tela foi escondida"); 
+                });
+                
+            });
+            $("#btnEsconderMostrar").click( function (){
+                $("#tela").slideUp(3000).slideDown(3000);
+                                
             });
             
         </script>
